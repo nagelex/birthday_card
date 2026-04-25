@@ -1,0 +1,27 @@
+{
+  "entities": {
+    "BirthdayCard": {
+      "title": "Birthday Card",
+      "description": "Configuration for an interactive birthday card",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "mainWish": { "type": "string" },
+        "wishes": { 
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "songUrl": { "type": "string" },
+        "lyrics": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "mainWish", "wishes", "songUrl", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/cards/{cardId}": {
+      "schema": "BirthdayCard",
+      "description": "Publicly accessible birthday cards via secret ID"
+    }
+  }
+}

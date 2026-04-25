@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-rounded: "Quicksand", sans-serif;
+  
+  --color-pastel-pink: #FFD1DC;
+  --color-pastel-peach: #FFD3B6;
+  --color-pastel-yellow: #FFF2B2;
+  --color-pastel-green: #D4EDDA;
+  --color-pastel-blue: #B2E2F2;
+}
+
+body {
+  background-color: #FAFAFA;
+  color: #333;
+  overflow-x: hidden;
+}
+
+.balloon-shadow {
+  filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.1));
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
