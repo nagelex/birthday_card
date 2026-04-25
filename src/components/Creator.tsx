@@ -76,19 +76,19 @@ I ain't Mr. Sunshine
   };
 
   const handleGenerate = async () => {
-    setIsGenerating(true);
-    try {
-      const configData = {
-        name,
-        mainWish,
-        wishes,
-        songUrl,
-        lyrics,
-        difficulty,
-        createdAt: serverTimestamp(),
-      };
+  setIsGenerating(true);
+  try {
+    const configData = {
+      name,
+      mainWish,
+      wishes,
+      songUrl: './birthday-song.mp3', 
+      lyrics,
+      difficulty,
+      createdAt: serverTimestamp(),
+    };
 
-      const docRef = await addDoc(collection(db, 'cards'), configData);
+    const docRef = await addDoc(collection(db, 'cards'), configData);
       
       const baseUrl = window.location.origin + window.location.pathname;
       const url = new URL(baseUrl);
